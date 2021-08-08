@@ -6,6 +6,21 @@ import time
 from pages.catalog_page import CatalogPage
 from pages.authorization_page import Authorization
 
+def test_scrolling_banners(driver):
+    driver.get("https://i-store.by")
+    home_page = HomePage(driver)
+    second_banner = home_page.scrolling_banners()
+    # breakpoint()
+    print(second_banner)
+    time.sleep(5)
+    three_banner = home_page.scrolling_banners()
+    print(three_banner)
+    time.sleep(5)
+    four_banner = home_page.scrolling_banners()
+    print(four_banner)
+    assert second_banner != three_banner
+    assert three_banner != four_banner
+
 def test_search_for_category(driver):
     driver.get("https://i-store.by")
     home_page = HomePage(driver)

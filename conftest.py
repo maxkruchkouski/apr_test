@@ -25,8 +25,8 @@ def driver(request):
     browser = request.config.getoption("--browser")
     mode = request.config.getoption("--mode")
 
-    chromedriver_path = "/home/maxim/PycharmProjects/apr_test/chromedriver"
-    geckodriver_path = "/home/maxim/PycharmProjects/apr_test/geckodriver"
+    chromedriver_path = "/Users/maxim/Documents/tms_diplom/chromedriver"
+    geckodriver_path = "/Users/maxim/Documents/tms_diplom/geckodriver"
 
     download_path = "/home/maxim/Downloads"
 

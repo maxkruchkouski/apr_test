@@ -1,6 +1,5 @@
 from selenium.webdriver.common.by import By
-
-#CATEGORY
+BANNER = By.XPATH,"//body/apr-root[1]/apr-home[1]/apr-fw-banners[1]/div[1]/ngx-slick-carousel[1]/div[1]/div[1]/div[@class='slide slick-slide ng-star-inserted slick-current slick-active']"
 CATEGORY_MAC = By.XPATH,"//apr-header-main-nav/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]"
 CATEGORY_IPAD = By.XPATH, "//apr-header-main-nav/div[1]/div[1]/div[1]/ul[1]/li[2]/a[1]"
 CATEGORY_IPHONE = By.XPATH,"//apr-header-main-nav/div[1]/div[1]/div[1]/ul[1]/li[3]/a[1]"

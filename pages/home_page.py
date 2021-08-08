@@ -8,6 +8,11 @@ from selenium.webdriver.common.keys import Keys
 
 class HomePage(BasePage):
 
+    def scrolling_banners(self):
+        a=self.find_element(home_page_locators.BANNER).get_attribute('data-slick-index')
+        return a
+
+
     def wait_send_pulse(self):
         self.find_element(home_page_locators.SENDPULSE)
 
