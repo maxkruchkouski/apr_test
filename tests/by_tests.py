@@ -30,7 +30,7 @@ def test_search_for_category(driver):
     home_page.enter_text_in_search_input()
     quantity_results_of_search = home_page.get_quantity_results_of_search_ru()
     assert  quantity_results_of_search != 0
-    # home_page.open_category_mac()
+    home_page.open_category_mac()
     # home_page.open_category_ipad()
     # home_page.open_category_iphone()
     # home_page.open_category_tv()
