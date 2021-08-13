@@ -9,6 +9,14 @@ from selenium.webdriver.common.keys import Keys
 class HomePage(BasePage):
 
     def scrolling_banners(self):
+        time.sleep(6)
+        number_elem = self.find_element(home_page_locators.BANNER).get_attribute('data-slick-index')
+        return number_elem
+
+    def open_category(self,category_name):
+        self.find_element(home_page_locators.category_name(category_name)).click()
+
+    def scrolling_banners(self):
         a=self.find_element(home_page_locators.BANNER).get_attribute('data-slick-index')
         return a
 

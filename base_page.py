@@ -10,17 +10,17 @@ class BasePage:
     def __init__(self, driver):
         self.driver = driver
 
-    def find_element(self, locator: Tuple, time: int =10) -> WebElement:
+    def find_element(self, locator: Tuple, time: int =15) -> WebElement:
         return WebDriverWait(self.driver,time).until(EC.presence_of_element_located(locator),
                                                       message=f"Can't find element by locator {locator}"
                                                      )
-    def find_elements(self, locator: Tuple, time: int =10) -> List:
+    def find_elements(self, locator: Tuple, time: int =15) -> List:
         return WebDriverWait(self.driver,time).until(EC.presence_of_all_elements_located(locator),
 
 
                                       message=f"Can't find elements by locator {locator}")
 
-    def waits_clickable_element(self, locator: Tuple, time: int =10) -> WebElement:
+    def waits_clickable_element(self, locator: Tuple, time: int =15) -> WebElement:
         return WebDriverWait(self.driver, time).until(EC.element_to_be_clickable((locator)),
 
                                       message = f"Element is not clickable {locator}")
@@ -29,13 +29,20 @@ class BasePage:
         iframe = self.find_element(locator)
         self.driver.switch_to.frame(iframe)
 
+    def open_new_tab_in_browser(self,url):
+        self.driver.execute_script("window.open();")
+        self.driver.switch_to_window(self.driver.window_handles[1])
+        self.driver.get(f'{url}')
+
+
+
     def switch_to_current_window(self):
         self.driver.switch_to.window(self.driver.window_handles[0])
 
     def move_to_element(self, web_elem: WebElement):
         ActionChains(self.driver).move_to_element(web_elem).perform()
 
-    def check_absence_element(self, locator, time=5):
+    def check_absence_element(self, locator, time=15):
         WebDriverWait(self.driver, time).until(EC.invisibility_of_element_located(locator))
 
     def click_with_javascript(self, web_element: WebElement) -> None:

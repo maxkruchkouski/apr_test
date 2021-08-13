@@ -1,4 +1,11 @@
 from selenium.webdriver.common.by import By
+
+BANNER = By.XPATH,"//body/apr-root[1]/apr-home[1]/apr-fw-banners[1]/div[1]/ngx-slick-carousel[1]/div[1]/div[1]/div[@class='slide slick-slide ng-star-inserted slick-current slick-active']"
+
+#CATEGORY
+def category_name(name):
+    return (By.XPATH,f"//apr-header-main-nav/div[1]/div[1]/div[1]/ul[1]/li//*[text()='{name}']")
+
 BANNER = By.XPATH,"//body/apr-root[1]/apr-home[1]/apr-fw-banners[1]/div[1]/ngx-slick-carousel[1]/div[1]/div[1]/div[@class='slide slick-slide ng-star-inserted slick-current slick-active']"
 CATEGORY_MAC = By.XPATH,"//apr-header-main-nav/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]"
 CATEGORY_IPAD = By.XPATH, "//apr-header-main-nav/div[1]/div[1]/div[1]/ul[1]/li[2]/a[1]"
